@@ -10,3 +10,9 @@
     opacity: 50%;
   }
 }
+
+@mixin small {
+  @media only screen and (max-width: $sm) {
+    @content;
+  }
+}

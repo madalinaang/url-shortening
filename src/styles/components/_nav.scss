@@ -6,11 +6,20 @@
   color: $grayish-violet;
   font-size: 85%;
   font-weight: $font-weight-bold;
+
+  @include small {
+    padding: 3rem 10%;
+    position: relative;
+  }
 }
 
 .page-menu {
   display: flex;
   gap: 2rem;
+
+  @include small {
+    display: none;
+  }
 }
 
 .login-menu {
@@ -19,6 +28,10 @@
   gap: 2rem;
   flex: 1;
   justify-content: flex-end;
+
+  @include small {
+    display: none;
+  }
 }
 
 .menu-item:hover {
@@ -27,4 +40,42 @@
 
 .signup-button {
   @include button-style;
+
+  @include small {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.menu-icon {
+  display: none;
+
+  @include small {
+    display: block;
+    flex: 1;
+    text-align: end;
+  }
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 80%;
+  transform: translateX(-50%);
+  padding: 3rem 0;
+  background-color: $primary-dark-violet;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 0.5rem;
+
+  .divider {
+    width: 80%;
+    height: 0.01rem;
+    background-color: $gray;
+    opacity: 50%;
+  }
 }

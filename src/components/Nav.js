@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 export default function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className="nav-bar">
       <img className="logo" src={process.env.PUBLIC_URL + "/images/logo.svg"} />
@@ -11,6 +19,19 @@ export default function Nav() {
         <p className="menu-item">Login</p>
         <button className="signup-button">Sign Up</button>
       </div>
+      <button className="menu-icon" onClick={toggleMenu}>
+        <img src={process.env.PUBLIC_URL + "/images/hamburger_icon.svg"} />
+      </button>
+      {menuOpen && (
+        <div className="mobile-menu">
+          <p className="menu-item">Features</p>
+          <p className="menu-item">Pricing</p>
+          <p className="menu-item">Resources</p>
+          <div className="divider" />
+          <p className="menu-item">Login</p>
+          <button className="signup-button">Sign Up</button>
+        </div>
+      )}
     </nav>
   );
 }

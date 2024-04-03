@@ -6,10 +6,22 @@
   align-items: center;
   justify-content: space-between;
   color: $grayish-violet;
+
+  @include small {
+    padding: 0 10%;
+    flex-direction: column-reverse;
+    margin-top: 0;
+    gap: 2rem;
+  }
 }
 
 .hero-img {
   margin-right: -5%;
+
+  @include small {
+    width: 160%;
+    margin-left: auto;
+  }
 }
 
 .description {
@@ -20,6 +32,17 @@
   p {
     line-height: 1.75;
   }
+
+  @include small {
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+      text-align: center;
+      font-size: 90%;
+    }
+  }
 }
 
 .title {
@@ -28,6 +51,13 @@
   font-size: 350%;
   letter-spacing: -0.1rem;
   margin-top: -1rem;
+
+  @include small {
+    font-size: 190%;
+    letter-spacing: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
 }
 
 .get-started-button {
@@ -36,4 +66,8 @@
   font-weight: $font-weight-bold;
   padding: 1rem 3rem;
   margin-top: 2.5rem;
+
+  @include small {
+    margin-top: 1rem;
+  }
 }
