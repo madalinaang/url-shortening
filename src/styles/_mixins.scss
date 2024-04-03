@@ -1,0 +1,12 @@
+@mixin button-style {
+  background-color: $primary-cyan;
+  border: none;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 500rem;
+  width: fit-content;
+
+  &:hover {
+    opacity: 50%;
+  }
+}

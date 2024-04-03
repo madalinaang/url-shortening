@@ -1,0 +1,30 @@
+.nav-bar {
+  padding: 3rem 15%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  color: $grayish-violet;
+  font-size: 85%;
+  font-weight: $font-weight-bold;
+}
+
+.page-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.login-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.menu-item:hover {
+  color: $very-dark-violet;
+}
+
+.signup-button {
+  @include button-style;
+}
