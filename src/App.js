@@ -1,6 +1,7 @@
 import "./styles/style.scss";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import Boost from "./components/Boost";
 import Footer from "./components/Footer";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <main>
       <Nav />
       <Hero />
+      <Boost />
       <Footer />
     </main>
   );
