@@ -2,6 +2,9 @@
   padding: 0 15% 1rem 15%;
   background-color: $bg-gray;
   margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
   @include small {
     padding: 0 5% 1rem 5%;
@@ -39,7 +42,7 @@
         flex: 1;
         background-color: white;
         border: none;
-        padding: 1rem 2.5rem;
+        padding: 1.5rem 2.5rem;
         border-radius: 0.5rem;
         color: $very-dark-violet;
 
@@ -65,7 +68,7 @@
         @include button-style;
 
         border-radius: 0.5rem;
-        padding: 1rem 2.5rem;
+        padding: 1.5rem 2.5rem;
         font-weight: $font-weight-bold;
 
         @include small {
@@ -102,5 +105,12 @@
       font-size: 80%;
       margin: -1rem 0 -0.5rem 0;
     }
+  }
+
+  .results {
+    margin-top: -5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }

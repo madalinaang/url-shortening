@@ -1,0 +1,74 @@
+.url {
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+
+  @include small {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .original-url {
+    flex: 1;
+    overflow: hidden;
+    color: $very-dark-violet;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @include small {
+      width: 100%;
+    }
+  }
+
+  .short-url {
+    color: $primary-cyan;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @include small {
+      width: 100%;
+    }
+  }
+
+  button {
+    @include button-style;
+
+    border-radius: 0.5rem;
+    padding: 1rem 0;
+    font-weight: $font-weight-bold;
+    width: 10rem;
+    text-align: center;
+
+    @include small {
+      width: 100%;
+      font-size: 90%;
+      text-align: center;
+    }
+
+    &.copied {
+      background-color: $primary-dark-violet;
+
+      &:hover {
+        background-color: $primary-dark-violet !important;
+      }
+    }
+  }
+
+  .divider {
+    display: none;
+
+    @include small {
+      width: 110%;
+      display: block;
+      height: 0.1rem;
+      background-color: $gray;
+      opacity: 50%;
+    }
+  }
+}

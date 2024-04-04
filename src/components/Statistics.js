@@ -9,7 +9,7 @@ export default function Statistics() {
 
       <div className="cards">
         <div className="bg-line" />
-        <div className="card">
+        <article className="card">
           <div className="icon">
             <img
               src={
@@ -22,8 +22,8 @@ export default function Statistics() {
             Boost your brand recognition with each click. Generic links don't
             mean a thing. Branded links help instil confidence in your content.
           </p>
-        </div>
-        <div className="card second">
+        </article>
+        <article className="card second">
           <div className="icon">
             <img
               src={process.env.PUBLIC_URL + "/images/icon-detailed-records.svg"}
@@ -34,8 +34,8 @@ export default function Statistics() {
             Gain insights into who is clicking your links. Knowing when and
             where people engage with your content helps inform better decisions.
           </p>
-        </div>
-        <div className="card third">
+        </article>
+        <article className="card third">
           <div className="icon">
             <img
               src={
@@ -48,7 +48,7 @@ export default function Statistics() {
             Improve brand awareness and content discoverability through
             customizable link, supercharging audience engagement.
           </p>
-        </div>
+        </article>
       </div>
     </section>
   );

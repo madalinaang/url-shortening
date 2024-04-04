@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import axios from "axios";
+import Url from "./Url";
 
 export default function Shorten() {
   const isMobileDevice = useMediaQuery({
@@ -9,16 +11,56 @@ export default function Shorten() {
   const [inputValue, setInputValue] = useState("");
   const [invalidValue, setInvalidValue] = useState(false);
 
+  const [urls, setUrls] = useState([]);
+
+  const saveToLocalStorage = () => {
+    localStorage.setItem("shortenedUrls", JSON.stringify(urls));
+  };
+
+  const readFromLocalStorage = () => {
+    const storedUrls = localStorage.getItem("shortenedUrls");
+    if (storedUrls) {
+      setUrls(JSON.parse(storedUrls));
+    }
+  };
+
+  useEffect(() => {
+    readFromLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    saveToLocalStorage();
+  }, [urls]);
+
   const handleChange = (e) => {
     setInputValue(e.target.value);
 
-    if (!inputValue) setInvalidValue(true);
-    else setInvalidValue(false);
+    setInvalidValue(false);
   };
 
-  const handleSubmit = () => {
-    if (!inputValue) setInvalidValue(true);
-    else setInvalidValue(false);
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
+  const handleSubmit = async () => {
+    if (inputValue === "") setInvalidValue(true);
+    else {
+      setInvalidValue(false);
+
+      try {
+        const response = await axios.get(
+          `https://tinyurl.com/api-create.php?url=${encodeURIComponent(
+            inputValue
+          )}`
+        );
+
+        setUrls([...urls, { org_url: inputValue, short_url: response.data }]);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
 
     setInputValue("");
   };
@@ -38,6 +80,7 @@ export default function Shorten() {
             type="text"
             value={inputValue}
             onChange={handleChange}
+            onKeyDown={handleKeyDown}
             placeholder="Shorten a link here..."
             className={invalidValue && "invalid"}
           />
@@ -45,6 +88,11 @@ export default function Shorten() {
           <button onClick={handleSubmit}>Shorten It!</button>
         </div>
         {invalidValue && <p className="error">Please add a link.</p>}
+      </div>
+      <div className="results">
+        {urls.map((el) => (
+          <Url original={el.org_url} short={el.short_url} />
+        ))}
       </div>
     </section>
   );
