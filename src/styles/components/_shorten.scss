@@ -1,0 +1,106 @@
+.shorten {
+  padding: 0 15% 1rem 15%;
+  background-color: $bg-gray;
+  margin-top: 10rem;
+
+  @include small {
+    padding: 0 5% 1rem 5%;
+  }
+
+  .input-box {
+    background-color: $primary-dark-violet;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transform: translate(0, -50%);
+
+    @include small {
+      img {
+        width: 100%;
+      }
+    }
+
+    .input-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 1rem;
+      width: 80%;
+
+      @include small {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 85%;
+      }
+
+      input {
+        flex: 1;
+        background-color: white;
+        border: none;
+        padding: 1rem 2.5rem;
+        border-radius: 0.5rem;
+        color: $very-dark-violet;
+
+        &::placeholder {
+          color: $grayish-violet;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &.invalid {
+          border: 0.2rem solid $red;
+        }
+
+        @include small {
+          padding: 1rem 1.1rem;
+          font-size: 90%;
+        }
+      }
+
+      button {
+        @include button-style;
+
+        border-radius: 0.5rem;
+        padding: 1rem 2.5rem;
+        font-weight: $font-weight-bold;
+
+        @include small {
+          width: 100%;
+          font-size: 90%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .error {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    margin-bottom: 1.5rem;
+    color: $red;
+    font-style: italic;
+    font-size: 80%;
+
+    @include small {
+      display: none;
+    }
+  }
+
+  .error-mobile {
+    display: none;
+
+    @include small {
+      display: block;
+      color: $red;
+      font-style: italic;
+      font-size: 80%;
+      margin: -1rem 0 -0.5rem 0;
+    }
+  }
+}

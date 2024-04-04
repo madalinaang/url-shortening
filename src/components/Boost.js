@@ -8,7 +8,6 @@ export default function Boost() {
   return (
     <section className="boost-section">
       <img
-        className="boost-img"
         src={
           isMobileDevice
             ? process.env.PUBLIC_URL + "/images/bg-boost-mobile.svg"
