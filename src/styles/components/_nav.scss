@@ -7,6 +7,11 @@
   font-size: 85%;
   font-weight: $font-weight-bold;
 
+  p:hover {
+    color: $very-dark-violet;
+    cursor: pointer;
+  }
+
   @include small {
     padding: 3rem 10%;
     position: relative;
@@ -32,11 +37,6 @@
   @include small {
     display: none;
   }
-}
-
-.menu-item:hover {
-  color: $very-dark-violet;
-  cursor: pointer;
 }
 
 .signup-button {

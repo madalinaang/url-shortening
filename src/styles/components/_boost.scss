@@ -17,22 +17,22 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-}
 
-.boost-text {
-  color: white;
-  font-size: 200%;
-  font-weight: $font-weight-bold;
-  text-align: center;
+  h3 {
+    color: white;
+    font-size: 200%;
+    font-weight: $font-weight-bold;
+    text-align: center;
 
-  @include small {
-    font-size: 140%;
+    @include small {
+      font-size: 140%;
+    }
   }
-}
 
-.boost-get-started-button {
-  @include button-style;
+  button {
+    @include button-style;
 
-  font-weight: $font-weight-bold;
-  padding: 1rem 3rem;
+    font-weight: $font-weight-bold;
+    padding: 1rem 3rem;
+  }
 }

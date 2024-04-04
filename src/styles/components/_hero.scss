@@ -8,20 +8,20 @@
   justify-content: space-between;
   color: $grayish-violet;
 
+  img {
+    margin-right: -5%;
+  }
+
   @include small {
     padding: 0 10%;
     flex-direction: column-reverse;
     margin-top: 0;
     gap: 2rem;
-  }
-}
 
-.hero-img {
-  margin-right: -5%;
-
-  @include small {
-    width: 160%;
-    margin-left: auto;
+    img {
+      width: 160%;
+      margin-left: auto;
+    }
   }
 }
 
@@ -30,8 +30,24 @@
   display: flex;
   flex-direction: column;
 
+  h1 {
+    color: $very-dark-violet;
+    font-weight: $font-weight-bold;
+    font-size: 350%;
+    letter-spacing: -0.1rem;
+    margin-top: -1rem;
+  }
+
   p {
     line-height: 1.75;
+  }
+
+  button {
+    @include button-style;
+
+    font-weight: $font-weight-bold;
+    padding: 1rem 3rem;
+    margin-top: 2.5rem;
   }
 
   @include small {
@@ -39,36 +55,20 @@
     align-items: center;
     gap: 1rem;
 
+    h1 {
+      font-size: 190%;
+      letter-spacing: 0;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
     p {
       text-align: center;
       font-size: 90%;
     }
-  }
-}
 
-.title {
-  color: $very-dark-violet;
-  font-weight: $font-weight-bold;
-  font-size: 350%;
-  letter-spacing: -0.1rem;
-  margin-top: -1rem;
-
-  @include small {
-    font-size: 190%;
-    letter-spacing: 0;
-    margin-top: 1rem;
-    text-align: center;
-  }
-}
-
-.get-started-button {
-  @include button-style;
-
-  font-weight: $font-weight-bold;
-  padding: 1rem 3rem;
-  margin-top: 2.5rem;
-
-  @include small {
-    margin-top: 1rem;
+    button {
+      margin-top: 1rem;
+    }
   }
 }

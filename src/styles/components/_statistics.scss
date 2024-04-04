@@ -1,0 +1,130 @@
+.statistics {
+  padding: 2rem 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: $bg-gray;
+
+  @include small {
+    padding: 2rem 10%;
+  }
+
+  h3 {
+    color: $very-dark-violet;
+    font-size: 200%;
+    font-weight: $font-weight-bold;
+    text-align: center;
+
+    @include small {
+      font-size: 140%;
+    }
+  }
+
+  .description {
+    color: $grayish-violet;
+    width: 55%;
+    text-align: center;
+    line-height: 1.75;
+
+    @include small {
+      text-align: center;
+      font-size: 90%;
+      width: 100%;
+    }
+  }
+
+  .cards {
+    margin: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    @include small {
+      flex-direction: column;
+      align-items: center;
+      gap: 6rem;
+    }
+
+    .bg-line {
+      position: absolute;
+      height: 0.5rem;
+      width: 90%;
+      background-color: $primary-cyan;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include small {
+        width: 0.5rem;
+        height: 90%;
+      }
+    }
+
+    .card {
+      width: 31.5%;
+      background-color: white;
+      padding: 4rem 2rem 2rem 2rem;
+      border-radius: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      height: fit-content;
+
+      @include small {
+        width: 95%;
+      }
+
+      .icon {
+        background-color: $primary-dark-violet;
+        padding: 1.5rem;
+        border-radius: 500rem;
+        width: fit-content;
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+
+        @include small {
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      h5 {
+        color: $very-dark-violet;
+        font-weight: $font-weight-bold;
+
+        @include small {
+          text-align: center;
+        }
+      }
+
+      p {
+        color: $grayish-violet;
+        font-size: 70%;
+        line-height: 1.7;
+
+        @include small {
+          text-align: center;
+        }
+      }
+    }
+
+    .second {
+      margin-top: 2.5rem;
+
+      @include small {
+        margin: 0;
+      }
+    }
+
+    .third {
+      margin-top: 5rem;
+
+      @include small {
+        margin: 0;
+      }
+    }
+  }
+}

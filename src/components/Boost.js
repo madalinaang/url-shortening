@@ -16,8 +16,8 @@ export default function Boost() {
         }
       />
       <div className="boost-content">
-        <h3 className="boost-text">Boost your links today</h3>
-        <button className="boost-get-started-button">Get Started</button>
+        <h3>Boost your links today</h3>
+        <button>Get Started</button>
       </div>
     </section>
   );

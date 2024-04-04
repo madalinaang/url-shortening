@@ -11,12 +11,12 @@ export default function Nav() {
     <nav className="nav-bar">
       <img className="logo" src={process.env.PUBLIC_URL + "/images/logo.svg"} />
       <div className="page-menu">
-        <p className="menu-item">Features</p>
-        <p className="menu-item">Pricing</p>
-        <p className="menu-item">Resources</p>
+        <p>Features</p>
+        <p>Pricing</p>
+        <p>Resources</p>
       </div>
       <div className="login-menu">
-        <p className="menu-item">Login</p>
+        <p>Login</p>
         <button className="signup-button">Sign Up</button>
       </div>
       <button className="menu-icon" onClick={toggleMenu}>
@@ -24,11 +24,11 @@ export default function Nav() {
       </button>
       {menuOpen && (
         <div className="mobile-menu">
-          <p className="menu-item">Features</p>
-          <p className="menu-item">Pricing</p>
-          <p className="menu-item">Resources</p>
+          <p>Features</p>
+          <p>Pricing</p>
+          <p>Resources</p>
           <div className="divider" />
-          <p className="menu-item">Login</p>
+          <p>Login</p>
           <button className="signup-button">Sign Up</button>
         </div>
       )}
